@@ -16,9 +16,9 @@
       </li>
     </ul>
     <ul class="list-module" v-show="isShowNone">
-        <li>
-            <span class="list-item-text">{{nodatatext}}</span>
-        </li>
+      <li>
+        <span class="list-item-text">{{nodatatext}}</span>
+      </li>
     </ul>
     <!-- <div class="tip__nodata" v-show="isShowNone">{{nodatatext}}</div> -->
   </div>
@@ -71,18 +71,21 @@ export default {
       }
     },
     show() {
-      if (this.datalist.length === 0) {
-        this.isShowNone = true;
-        // this.isShowData = false;
-      } else {
-        // this.isShowData = true;
-        this.isShowNone = false;
-      }
+    //   if (this.datalist.length === 0) {
+    //     this.isShowNone = true;
+    //     // this.isShowData = false;
+    //   } else {
+    //     // this.isShowData = true;
+    //     this.isShowNone = false;
+    //   }
       this.isShowData = !this.isShowData;
       if (this.inputText) {
         this.datalist = this.dataFilter(this.datalist, this.inputText);
       } else {
         this.datalist = this.itemlist;
+      }
+      if(this.datalist.length === 0){
+          this.isShowNone = !this.isShowNone
       }
     }
   },
@@ -147,11 +150,22 @@ export default {
   border-radius: 0.5rem;
   margin-top: 0.5rem;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background-color: lightgray;
+}
 
 .dropdown-container .list-module li {
   list-style: none;
   padding: 0px;
   margin: 0.5em 0;
+  height: 34px;
+  line-height: 34px;
 }
 .dropdown-container .list-module li._self-hide {
   display: none;
@@ -165,7 +179,7 @@ export default {
   font-size: 12px;
   margin-top: 1em;
 }
-.none{
-    display: none;
+.none {
+  display: none;
 }
 </style>
