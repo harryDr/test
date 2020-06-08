@@ -149,6 +149,9 @@ export default {
   box-shadow: 0px 0px 10px #ccc;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
+  position: relative;
+  background-color: #fff;
+  z-index: 99;
 }
 ::-webkit-scrollbar {
   width: 10px;
