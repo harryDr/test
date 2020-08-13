@@ -2,8 +2,10 @@
 
 ### 使用Vue+Element前端导入导出Excel
 
-* npm install --save xlsx file-saver npm install -D script-loader 样式的话需要：npm install --save xlsx-style (安装后没有 xlsx-style得话需要下载npm install --save yxg-xlsx-style) 
-    注意：如果安装了npm install --save xlsx-style 会报错：This relative module was not found: . /cptable in . /node_modules/xlsx-style@0. 8. 13@xlsx-style/dist/cpexcel. js 
+* npm install --save xlsx file-saver npm install -D script-loader 
+    样式的话需要：npm install --save xlsx-style (安装后没有 xlsx-style得话需要下载npm install --save yxg-xlsx-style) 
+    注意：如果安装了npm install --save xlsx-style 
+    会报错：This relative module was not found: . /cptable in . /node_modules/xlsx-style@0. 8. 13@xlsx-style/dist/cpexcel. js 
     可以直接修改源 码： 在\node_modules\xlsx-style\dist\cpexcel. js 807行 的 var cpt = require(’. /cpt’ + ‘able’); 改成 var cpt = cptable; 
 
 * 需要下载 (放在同一个文件夹下 src/vendor) Blob. js -- 无需修改 Export2Excel. js -- 需要改样式的话需要修改文件 
