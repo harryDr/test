@@ -12,7 +12,7 @@
     }
    ```
    2.div宽高设置为0
-    ```
+   ```
     //此时一个正方形中由4个三角形拼接而成
     <div class="tragger"></div>
     .tragger {
@@ -32,6 +32,29 @@
       border-style: solid;  //实线
       border-width: 0 10px 20px; //线宽 要下 则上的宽度去掉 
       border-color: transparent transparent #d9534f ; //上 右 左 透明 下 存在有颜色
+    }
+   ```
+   *css实现空心三角形
+    实现原理：利用伪类做一个小的三角形覆盖上去
+   ```
+    <div class="triangle"></div>
+    
+    .triangle{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 20px;
+        border-color: transparent transparent red;
+        position: relative;
+    } 
+    .triangle:after{
+        content: '';
+        border-style: solid;
+        border-width: 0 8px 16px;
+        border-color: transparent transparent #fff;
+        position: absolute; 
+        top: 2.5px; //定位需要自己调整
+        left: -8px;
     }
    ```
    
